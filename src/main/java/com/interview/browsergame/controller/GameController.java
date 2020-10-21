@@ -16,7 +16,7 @@ public class GameController {
     GameService gameService;
 
     @PostMapping("/playgame")
-    public Game playGame(@RequestBody Game game) {
+    public Game playGame(@RequestBody Game game) throws Exception {
         return gameService.createGame(game);
     }
 

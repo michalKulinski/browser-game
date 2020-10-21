@@ -21,18 +21,18 @@ public class LeaderBoardController {
         return leaderBoardService.leaderBoards();
     }
 
-    @GetMapping("/today")
-    public List<LeaderBoard> leaderBoardToday() {
+    @GetMapping("/daily")
+    public List<LeaderBoard> leaderBoardDaily() {
         return leaderBoardService.leaderBoardsToday();
     }
 
     @GetMapping("/weekly")
-    public String leaderBoardThisWeek() {
-        return "Leader Board";
+    public List<LeaderBoard> leaderBoardWeekly() {
+        return leaderBoardService.leaderBoardsWeekly();
     }
 
     @GetMapping("/yearly")
-    public String leaderBoardThisYear() {
-        return "Leader Board";
+    public List<LeaderBoard> leaderBoardYearly() {
+        return leaderBoardService.leaderBoardsYearly();
     }
 }

@@ -7,10 +7,8 @@ import com.interview.browsergame.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Service
 public class GameService {
@@ -43,7 +41,7 @@ public class GameService {
 
     public List<LeaderBoard> rankingDaily() {
         leaderBoardList = new ArrayList<>();
-        List<Object[]> results = gameRepository.rankingToday();
+        List<Object[]> results = gameRepository.rankingDaily();
 
         for (Object[] entry : results) {
             leaderBoardList.add(new LeaderBoard(playerService.findById((Long) entry[0]), (Long) entry[1]));
@@ -53,7 +51,7 @@ public class GameService {
 
     public List<LeaderBoard> rankingWeekly() {
         leaderBoardList = new ArrayList<>();
-        List<Object[]> results = gameRepository.rankingWeek();
+        List<Object[]> results = gameRepository.rankingWeekly();
 
         for (Object[] entry : results) {
             leaderBoardList.add(new LeaderBoard(playerService.findById((Long) entry[0]), (Long) entry[1]));
@@ -66,12 +64,7 @@ public class GameService {
         List<Object[]> results = gameRepository.rankingYearly();
 
         for (Object[] entry : results) {
-            Player player = playerService.findById((Long) entry[0]);
-            if (player != null) {
-                leaderBoardList.add(new LeaderBoard(player, (Long) entry[1]));
-            } else {
-                System.out.println("player is null");
-            }
+                leaderBoardList.add(new LeaderBoard(playerService.findById((Long) entry[0]), (Long) entry[1]));
         }
         return leaderBoardList;
     }

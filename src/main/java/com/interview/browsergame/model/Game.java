@@ -40,8 +40,16 @@ public class Game {
         return playerId;
     }
 
+    public void setPlayerId(Long playerId) {
+        this.playerId = playerId;
+    }
+
     public Long getScore() {
         return score;
+    }
+
+    public void setScore(Long score) {
+        this.score = score;
     }
 
     public Timestamp getDate() {

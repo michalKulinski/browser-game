@@ -19,7 +19,7 @@ public class LeaderBoardService {
         return gameService.ranking();
     }
 
-    public List<LeaderBoard> leaderBoardsToday() {
+    public List<LeaderBoard> leaderBoardsDaily() {
         return gameService.rankingDaily();
     }
 

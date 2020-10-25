@@ -22,7 +22,7 @@ public class PlayerController {
         return playerService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/player/{id}")
     public Player findById(@PathVariable Long id) {
         return playerService.findById(id);
     }

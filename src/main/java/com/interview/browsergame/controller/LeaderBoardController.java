@@ -23,7 +23,7 @@ public class LeaderBoardController {
 
     @GetMapping("/daily")
     public List<LeaderBoard> leaderBoardDaily() {
-        return leaderBoardService.leaderBoardsToday();
+        return leaderBoardService.leaderBoardsDaily();
     }
 
     @GetMapping("/weekly")

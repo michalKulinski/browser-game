@@ -24,10 +24,10 @@ public interface GameRepository extends CrudRepository<Game, Long> {
     List<Object[]> ranking();
 
     @Query(queryDaily)
-    List<Object[]> rankingToday();
+    List<Object[]> rankingDaily();
 
     @Query(queryWeekly)
-    List<Object[]> rankingWeek();
+    List<Object[]> rankingWeekly();
 
     @Query(queryYearly)
     List<Object[]> rankingYearly();
